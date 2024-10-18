@@ -87,8 +87,10 @@ body {
     clip-path: var(--slice-0);
 }
 
-#click:hover::after {
-    animation: glitch 1s steps(2, end);
+@media (hover: hover) {
+    #click:hover::after {
+        animation: glitch 1s steps(2, end);
+    }
 }
 
 #click:disabled:after {
@@ -320,5 +322,31 @@ body {
     100% {
         clip-path: var(--slice-1);
         transform: translate(0);
+    }
+}
+
+.creator-container {
+    position: absolute;
+    bottom: 1rem;
+
+    & .creator-text {
+        font-family: sans-serif;
+        font-weight: 500;
+        font-size: 1.125rem;
+        color: rgba(21, 21, 21, 255);
+
+        & .creator-hyperlink {
+            font-family: "Bebas Neue";
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #c33d3a;
+            text-decoration: none;
+        }
+    }
+}
+
+@media screen and (max-width: 375px) {
+    body {
+        justify-content: flex-start;
     }
 }
